@@ -12,7 +12,7 @@ class Hanged
 		$this->words = $words;
 	}
 
-	public function getWord()
+	private function getWord()
 	{
 		$specialCharacters = ['.', ',', '$', '?', '&', ' '];
 
@@ -44,7 +44,7 @@ class Hanged
 
 	public function run()
 	{
-	
+		$this->getWord();
 	}
 
 
