@@ -12,6 +12,35 @@ class Hanged
 		$this->words = $words;
 	}
 
+	public function getWord()
+	{
+		$specialCharacters = ['.', ',', '$', '?', '&', ' '];
+
+		foreach ($this->words as $key => $word) 
+		{
+			$wordSplited = str_split($word);
+			foreach ($wordSplited as $key => $letter) 
+			{
+				if (is_numeric($letter)) 
+				{
+					throw new Exception('Hay palabras incorrectas');
+				}
+
+				foreach ($specialCharacters as $key => $character) 
+				{
+					if ($letter == $character) 
+					{
+						throw new Exception('Hay palabras incorrectas');
+					}
+				}
+			}
+		}
+
+		//return $this->words[rand(0, count($this->words) - 1)]; 
+		echo $this->words[rand(0, count($this->words) - 1)]; 
+	}
+
+
 
 	public function run()
 	{
