@@ -7,15 +7,15 @@ class Hanged
 	private $words;
 	private $errors;
 
-	function __construct()
+	function __construct($words)
 	{
-		
+		$this->words = $words;
 	}
 
 
 	public function run()
 	{
-
+	
 	}
 
 
